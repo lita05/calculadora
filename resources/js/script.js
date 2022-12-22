@@ -17,6 +17,13 @@ function multiplicaNumeros(num1,num2) {
 function divideNumeros(num1,num2) {
     return num1/num2;
 }
+function exponenciarNumeros(num1,num2) {
+    return num1**num2;
+}
+function raizNumeros(num1,num2) {
+    num2=1/num2;
+    return num1**num2;
+}
 
 function imprimir(a){
     texto=texto+a;
@@ -45,14 +52,24 @@ function resultadoFinal()
     else if (operando=="-") {
         resultado=restaNumeros(numero1,numero2);
     }
-    else if (operando=="*") {
+    else if (operando=="x") {
         resultado=multiplicaNumeros(numero1,numero2);
     }
-    else if (operando=="//") {
+    else if (operando=="/") {
         resultado=divideNumeros(numero1,numero2);
+    }
+    else if (operando=="**") {
+        resultado=exponenciarNumeros(numero1,numero2);
+    }
+    else if (operando=="r") {
+        resultado=raizNumeros(numero1,numero2);
     }
 
     document.getElementById("mostrar").innerHTML=resultado;
+    texto="";
+    textoAuxiliar="";
+    numero1=null;
+    numero2=null;
 }
 
 
